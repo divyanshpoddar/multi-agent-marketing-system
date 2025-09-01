@@ -9,25 +9,6 @@ The system is designed to optimize **lead management**, **campaign execution**, 
 
 ---
 
-## 📂 File Structure  
-
-multi-agent-marketing-system/
-│── main.py
-│── requirements.txt
-│── agents/
-│ ├── init.py
-│ ├── lead_triage_agent.py
-│ ├── engagement_agent.py
-│ └── campaign_optimization_agent.py
-│── memory/
-│ ├── init.py
-│ └── persistent_memory.py
-│── protocols/
-│ ├── init.py
-│ └── handoff_protocols.py
-
----
-
 ## ⚙️ Technical Requirements  
 
 - 🔒 **MCP Server/Client** → For secure data access  
