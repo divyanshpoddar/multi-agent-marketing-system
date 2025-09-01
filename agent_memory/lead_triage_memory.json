@@ -1,0 +1,10 @@
+{
+    "customer_history": {},
+    "episodic": {
+        "lead_subject_product inquiry": "Campaign Qualified",
+        "lead_subject_newsletter": "Cold Lead",
+        "lead_subject_sales inquiry": "Campaign Qualified",
+        "lead_subject_support question": "Cold Lead"
+    },
+    "semantic": {}
+}

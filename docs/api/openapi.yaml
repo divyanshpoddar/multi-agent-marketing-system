@@ -1,0 +1,129 @@
+openapi: 3.0.1
+info:
+  title: Multi-Agent Marketing System API
+  description: API for the AI-driven marketing system. It provides endpoints to triage leads, initiate engagements, and optimize campaigns.
+  version: 1.0.0
+servers:
+  - url: http://127.0.0.1:8000
+    description: Local development server
+paths:
+  /triage:
+    post:
+      tags:
+        - Agent Actions
+      summary: Triage a New Marketing Lead
+      description: Retrieves lead data using its ID and triggers the Lead Triage Agent to categorize it. May initiate a handoff to the Engagement Agent.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TriageRequest'
+      responses:
+        '200':
+          description: Lead triaged successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  lead_id:
+                    type: string
+                    example: lead1
+                  category:
+                    type: string
+                    example: Campaign Qualified
+        '404':
+          description: Lead not found in the database.
+  /engage:
+    post:
+      tags:
+        - Agent Actions
+      summary: Directly Engage with a Lead
+      description: Manually triggers the Engagement Agent to perform an action on a lead, providing necessary context.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EngageRequest'
+      responses:
+        '200':
+          description: Engagement action initiated successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EngageResponse'
+  /optimize:
+    post:
+      tags:
+        - Agent Actions
+      summary: Optimize a Marketing Campaign
+      description: Triggers the Campaign Optimization Agent to analyze performance and provide recommendations.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OptimizeRequest'
+      responses:
+        '200':
+          description: Campaign analysis complete.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OptimizeResponse'
+components:
+  schemas:
+    TriageRequest:
+      type: object
+      properties:
+        lead_id:
+          type: string
+          description: The unique identifier for the lead.
+          example: lead1
+    EngageRequest:
+      type: object
+      properties:
+        lead_id:
+          type: string
+          example: lead1
+        engagement_type:
+          type: string
+          description: The type of engagement to initiate.
+          example: email
+        context:
+          type: object
+          description: Contextual information for the engagement.
+          example:
+            category: Campaign Qualified
+    EngageResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        message:
+          type: string
+          example: "Initiating email engagement with lead lead1."
+    OptimizeRequest:
+      type: object
+      properties:
+        campaign_id:
+          type: string
+          example: summer_sale_2025
+    OptimizeResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        recommendations:
+          type: array
+          items:
+            type: string
+          example: ["A/B test ad copy and landing page to improve conversion rate."]
+
