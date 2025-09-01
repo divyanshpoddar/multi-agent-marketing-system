@@ -32,7 +32,7 @@ pip install "fastapi[all]" "python-jsonrpc-server"
 ```
 ### ▶️ Running the System
 ```bash
-From the root directory multi-agent-marketing-system/, run:
+#From the root directory multi-agent-marketing-system/, run:
 uvicorn main:app --reload
 ```
 🌐 Server: http://127.0.0.1:8000
