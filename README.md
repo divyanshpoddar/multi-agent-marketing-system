@@ -48,10 +48,10 @@ venv\Scripts\activate.bat      # On Windows
 ###2️⃣ Install dependencies
 ```bash
 pip install "fastapi[all]" "python-jsonrpc-server"
-▶️ Running the System
-From the root directory multi-agent-marketing-system/, run:
 ```
+###▶️ Running the System
 ```bash
+From the root directory multi-agent-marketing-system/, run:
 uvicorn main:app --reload
 ```
 🌐 Server: http://127.0.0.1:8000
