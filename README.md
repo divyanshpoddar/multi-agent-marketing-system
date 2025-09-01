@@ -40,7 +40,10 @@ uvicorn main:app --reload
 📘 API Docs: http://127.0.0.1:8000/docs
 
 ## ✅ Features
--🤝 Multi-Agent Collaboration for marketing workflows
--📊 Real-Time Campaign Optimization
--🔄 Seamless Agent Handoffs with context preservation
--🧩 Scalable Architecture with modular design
+ - 🤝 Multi-Agent Collaboration for marketing workflows
+
+ - 📊 Real-Time Campaign Optimization
+
+ - 🔄 Seamless Agent Handoffs with context preservation
+
+ - 🧩 Scalable Architecture with modular design
