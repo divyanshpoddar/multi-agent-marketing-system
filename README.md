@@ -45,11 +45,11 @@ python3 -m venv venv
 source venv/bin/activate   # On Linux/Mac
 venv\Scripts\activate.bat      # On Windows
 ```
-###2️⃣ Install dependencies
+### 2️⃣ Install dependencies
 ```bash
 pip install "fastapi[all]" "python-jsonrpc-server"
 ```
-###▶️ Running the System
+### ▶️ Running the System
 ```bash
 From the root directory multi-agent-marketing-system/, run:
 uvicorn main:app --reload
